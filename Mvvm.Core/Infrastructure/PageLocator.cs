@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Practices.ServiceLocation;
 using Mvvm.Core.Helpers;
 using Mvvm.Core.ViewModels;
 using Xamarin.Forms;
@@ -14,7 +15,7 @@ namespace Mvvm.Core.Infrastructure
 
         protected virtual IViewModel CreateViewModel(Type viewModelType)
         {
-            return Activator.CreateInstance(viewModelType) as IViewModel;
+            return ServiceLocator.Current.GetInstance(viewModelType) as IViewModel;
         }
 
         protected virtual Type FindPageForViewModel(Type viewModelType)

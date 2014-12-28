@@ -1,17 +1,23 @@
-﻿using Mvvm.Core.Infrastructure;
+﻿using System.Threading.Tasks;
+using Mvvm.Core.Infrastructure;
 using Xamarin.Forms;
 
 namespace Mvvm.Core.Services
 {
     public class NavigationService: INavigationService
     {
+        public async Task GoBack()
+        {
+            await Navigation.PopAsync();
+        }
+
         public INavigation Navigation { get; set; }
 
-        public void NavigateTo<T>(object param = null)
+        public async Task NavigateTo<T>(object param = null)
         {
             IPageLocator pageLocator = new PageLocator();
             Page page = pageLocator.ResolvePageAndViewModel(typeof (T), param);
-            Navigation.PushAsync(page);
+            await Navigation.PushAsync(page);
         }
     }
 }

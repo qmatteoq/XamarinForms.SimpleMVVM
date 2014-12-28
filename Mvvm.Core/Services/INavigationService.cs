@@ -1,10 +1,13 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Mvvm.Core.Services
 {
     public interface INavigationService
     {
-        void NavigateTo<T>(object param = null);
+        Task NavigateTo<T>(object param = null);
+
+        Task GoBack();
 
         INavigation Navigation { get; set; }
     }

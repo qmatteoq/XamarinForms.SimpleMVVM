@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using Mvvm.Core;
 using Mvvm.Core.Services;
 using Mvvm.Core.ViewModels;
 using PropertyChanged;
@@ -29,9 +28,9 @@ namespace MvvmLight_Sample.ViewModels
             {
                 if (_goToDetailPageCommand == null)
                 {
-                    _goToDetailPageCommand = new RelayCommand(() =>
+                    _goToDetailPageCommand = new RelayCommand(async () =>
                     {
-                        _navigationService.NavigateTo<DetailViewModel>("Parameter");
+                        await _navigationService.NavigateTo<DetailViewModel>("Parameter");
                     });
                 }
 
