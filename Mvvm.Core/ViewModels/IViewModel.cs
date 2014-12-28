@@ -1,4 +1,4 @@
-﻿namespace Mvvm.Core.ViewModels
+﻿namespace SimpleMVVM.Core.ViewModels
 {
     public interface IViewModel
     {

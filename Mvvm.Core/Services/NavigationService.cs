@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Mvvm.Core.Infrastructure;
+using SimpleMVVM.Core.Infrastructure;
 using Xamarin.Forms;
 
-namespace Mvvm.Core.Services
+namespace SimpleMVVM.Core.Services
 {
     public class NavigationService: INavigationService
     {

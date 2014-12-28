@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-using Mvvm.Core.Helpers;
-using Mvvm.Core.Services;
+using SimpleMVVM.Core.Helpers;
+using SimpleMVVM.Core.Services;
 using SimpleMVVM.Sample.ViewModels;
 using SimpleMVVM.Sample.Views;
 using Xamarin.Forms;

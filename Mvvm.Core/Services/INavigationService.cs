@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Mvvm.Core.Services
+namespace SimpleMVVM.Core.Services
 {
     public interface INavigationService
     {

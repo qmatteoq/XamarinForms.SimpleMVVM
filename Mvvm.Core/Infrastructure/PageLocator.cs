@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.Practices.ServiceLocation;
-using Mvvm.Core.Helpers;
-using Mvvm.Core.ViewModels;
+using SimpleMVVM.Core.Helpers;
+using SimpleMVVM.Core.ViewModels;
 using Xamarin.Forms;
 
-namespace Mvvm.Core.Infrastructure
+namespace SimpleMVVM.Core.Infrastructure
 {
     public class PageLocator : IPageLocator
     {

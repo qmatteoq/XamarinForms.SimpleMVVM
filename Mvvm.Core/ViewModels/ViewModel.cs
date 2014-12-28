@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 
-namespace Mvvm.Core.ViewModels
+namespace SimpleMVVM.Core.ViewModels
 {
     public abstract class ViewModel : ViewModelBase, IViewModel
     {

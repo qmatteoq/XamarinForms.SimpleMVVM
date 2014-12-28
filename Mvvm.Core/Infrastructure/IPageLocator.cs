@@ -1,8 +1,8 @@
 ﻿using System;
-using Mvvm.Core.ViewModels;
+using SimpleMVVM.Core.ViewModels;
 using Xamarin.Forms;
 
-namespace Mvvm.Core.Infrastructure
+namespace SimpleMVVM.Core.Infrastructure
 {
     public interface IPageLocator
     {

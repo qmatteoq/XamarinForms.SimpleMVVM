@@ -1,7 +1,7 @@
-﻿using Mvvm.Core.ViewModels;
+﻿using SimpleMVVM.Core.ViewModels;
 using Xamarin.Forms;
 
-namespace Mvvm.Core.Helpers
+namespace SimpleMVVM.Core.Helpers
 {
     public static class Extensions
     {

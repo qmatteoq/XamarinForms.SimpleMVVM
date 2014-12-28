@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using Mvvm.Core.Services;
-using Mvvm.Core.ViewModels;
 using PropertyChanged;
+using SimpleMVVM.Core.Services;
+using SimpleMVVM.Core.ViewModels;
 
 namespace SimpleMVVM.Sample.ViewModels
 {
