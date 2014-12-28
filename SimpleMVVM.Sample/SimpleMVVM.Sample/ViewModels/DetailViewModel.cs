@@ -10,7 +10,7 @@ namespace SimpleMVVM.Sample.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        public override void Init(object args)
+        public override void OnInit(object args)
         {
             MainText = args.ToString();
         }

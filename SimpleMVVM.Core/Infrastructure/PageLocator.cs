@@ -34,7 +34,7 @@ namespace SimpleMVVM.Core.Infrastructure
         public Page ResolvePageAndViewModel(Type viewModelType, object args)
         {
             var viewModel = this.CreateViewModel(viewModelType);
-            viewModel.Init(args);
+            viewModel.OnInit(args);
             return this.ResolvePage(viewModel);
         }
 

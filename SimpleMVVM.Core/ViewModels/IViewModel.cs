@@ -2,7 +2,7 @@
 {
     public interface IViewModel
     {
-        void Init(object args);
+        void OnInit(object args);
         void OnAppearing();
         void OnDisappearing();
     }
