@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Practices.ServiceLocation;
 using SimpleMVVM.Core.Helpers;
+using SimpleMVVM.Core.Services;
 using SimpleMVVM.Core.ViewModels;
 using Xamarin.Forms;
 
@@ -31,10 +32,30 @@ namespace SimpleMVVM.Core.Infrastructure
             return pageType;
         }
 
-        public Page ResolvePageAndViewModel(Type viewModelType, object args)
+        public NavigationPage ResolveNavigationPageAndViewModel(Type viewModelType, object args)
         {
             var viewModel = this.CreateViewModel(viewModelType);
             viewModel.OnInit(args);
+            return this.ResolveNavigationPage(viewModel);
+        }
+
+        public NavigationPage ResolveNavigationPage(IViewModel viewModel)
+        {
+            var pageType = this.FindPageForViewModel(viewModel.GetType());
+            var page = this.CreatePage(pageType);
+
+            NavigationPage navigationPage = new NavigationPage(page) {Title = page.Title};
+            NavigationService navigationService = new NavigationService {Navigation = navigationPage.Navigation};
+            viewModel.NavigationService = navigationService;
+            page.BindViewModel(viewModel);
+            return navigationPage;
+        }
+
+        public Page ResolvePageAndViewModel(Type viewModelType, object args, INavigationService navigationService)
+        {
+            var viewModel = this.CreateViewModel(viewModelType);
+            viewModel.OnInit(args);
+            viewModel.NavigationService = navigationService;
             return this.ResolvePage(viewModel);
         }
 

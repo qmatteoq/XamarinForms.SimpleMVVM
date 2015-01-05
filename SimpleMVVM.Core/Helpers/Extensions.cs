@@ -1,4 +1,6 @@
-﻿using SimpleMVVM.Core.ViewModels;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using SimpleMVVM.Core.ViewModels;
 using Xamarin.Forms;
 
 namespace SimpleMVVM.Core.Helpers
@@ -11,6 +13,12 @@ namespace SimpleMVVM.Core.Helpers
 
             page.Appearing += (sender, args1) => viewModel.OnAppearing();
             page.Disappearing += (sender, args1) => viewModel.OnDisappearing();
+        }
+
+        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> list)
+        {
+            ObservableCollection<T> collection = new ObservableCollection<T>(list);
+            return collection;
         }
     }
 }

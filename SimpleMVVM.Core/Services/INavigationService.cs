@@ -5,9 +5,11 @@ namespace SimpleMVVM.Core.Services
 {
     public interface INavigationService
     {
-        Task NavigateTo<T>(object param = null);
+        Task NavigateToAsync<T>(object param = null);
 
-        Task GoBack();
+        Task NavigateToPageAsync(Page page);
+
+        Task GoBackAsync();
 
         INavigation Navigation { get; set; }
     }

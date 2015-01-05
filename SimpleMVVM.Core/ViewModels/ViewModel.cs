@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using SimpleMVVM.Core.Services;
 
 namespace SimpleMVVM.Core.ViewModels
 {
@@ -18,5 +19,7 @@ namespace SimpleMVVM.Core.ViewModels
         {
             
         }
+
+        public INavigationService NavigationService { get; set; }
     }
 }

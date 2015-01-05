@@ -1,9 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-using SimpleMVVM.Core.Helpers;
-using SimpleMVVM.Core.Services;
+using SimpleMVVM.Core.Infrastructure;
 using SimpleMVVM.Sample.ViewModels;
-using SimpleMVVM.Sample.Views;
 using Xamarin.Forms;
 
 namespace SimpleMVVM.Sample
@@ -13,17 +11,12 @@ namespace SimpleMVVM.Sample
         public App()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<MainPageViewModel>();
+            SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<DetailViewModel>();
 
-            NavigationPage page = new NavigationPage(new MainPage());    
-            INavigationService navigationService = new NavigationService();
-            navigationService.Navigation = page.Navigation;
+            PageLocator locator = new PageLocator();
+            NavigationPage page = locator.ResolveNavigationPageAndViewModel(typeof (MainViewModel), null);
 
-            SimpleIoc.Default.Register<INavigationService>(() => navigationService);
-
-            MainPageViewModel mainPageViewModel = ServiceLocator.Current.GetInstance<MainPageViewModel>();
-            page.BindViewModel(mainPageViewModel);
             this.MainPage = page;
         }
     }

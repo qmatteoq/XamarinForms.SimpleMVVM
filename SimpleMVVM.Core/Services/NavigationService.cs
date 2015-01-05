@@ -6,17 +6,23 @@ namespace SimpleMVVM.Core.Services
 {
     public class NavigationService: INavigationService
     {
-        public async Task GoBack()
+        public async Task GoBackAsync()
         {
             await Navigation.PopAsync();
         }
 
         public INavigation Navigation { get; set; }
 
-        public async Task NavigateTo<T>(object param = null)
+        public async Task NavigateToAsync<T>(object param = null)
         {
             IPageLocator pageLocator = new PageLocator();
-            Page page = pageLocator.ResolvePageAndViewModel(typeof (T), param);
+            Page page = pageLocator.ResolvePageAndViewModel(typeof (T), param, this);
+            await Navigation.PushAsync(page);
+        }
+
+      
+        public async Task NavigateToPageAsync(Page page)
+        {
             await Navigation.PushAsync(page);
         }
     }

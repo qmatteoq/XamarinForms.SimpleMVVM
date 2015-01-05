@@ -1,23 +1,16 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using PropertyChanged;
-using SimpleMVVM.Core.Services;
 using SimpleMVVM.Core.ViewModels;
 
 namespace SimpleMVVM.Sample.ViewModels
 {
     [ImplementPropertyChanged]
-    public class MainPageViewModel: ViewModel
+    public class MainViewModel: ViewModel
     {
-        private readonly INavigationService _navigationService;
         public string MainText { get; set; }
         public override void OnAppearing()
         {
             MainText = "Hello world!";
-        }
-
-        public MainPageViewModel(INavigationService navigationService)
-        {
-            _navigationService = navigationService;
         }
 
 
@@ -30,7 +23,7 @@ namespace SimpleMVVM.Sample.ViewModels
                 {
                     _goToDetailPageCommand = new RelayCommand(async () =>
                     {
-                        await _navigationService.NavigateTo<DetailViewModel>("Parameter");
+                        await NavigationService.NavigateToAsync<DetailViewModel>("Parameter");
                     });
                 }
 

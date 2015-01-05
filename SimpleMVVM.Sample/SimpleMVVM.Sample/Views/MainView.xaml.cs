@@ -1,8 +1,8 @@
 ﻿namespace SimpleMVVM.Sample.Views
 {
-    public partial class MainPage
+    public partial class MainView
     {
-        public MainPage()
+        public MainView()
         {
             InitializeComponent();
         }
