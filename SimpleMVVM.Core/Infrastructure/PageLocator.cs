@@ -32,7 +32,7 @@ namespace SimpleMVVM.Core.Infrastructure
             return pageType;
         }
 
-        public NavigationPage ResolveNavigationPageAndViewModel(Type viewModelType, object args)
+        public NavigationPage ResolveNavigationPageAndViewModel(Type viewModelType, object args = null)
         {
             var viewModel = this.CreateViewModel(viewModelType);
             viewModel.OnInit(args);
