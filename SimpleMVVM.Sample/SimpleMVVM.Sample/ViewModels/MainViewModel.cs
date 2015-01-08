@@ -23,7 +23,7 @@ namespace SimpleMVVM.Sample.ViewModels
                 {
                     _goToDetailPageCommand = new RelayCommand(async () =>
                     {
-                        await NavigationService.NavigateToAsync<DetailViewModel>("Parameter");
+                        await NavigationService.NavigateToViewModelAsync<DetailViewModel>("Parameter");
                     });
                 }
 

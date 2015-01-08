@@ -13,7 +13,7 @@ namespace SimpleMVVM.Core.Services
 
         public INavigation Navigation { get; set; }
 
-        public async Task NavigateToAsync<T>(object param = null)
+        public async Task NavigateToViewModelAsync<T>(object param = null)
         {
             IPageLocator pageLocator = new PageLocator();
             Page page = pageLocator.ResolvePageAndViewModel(typeof (T), param, this);
