@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controls\UserControl.cs" />
     <Compile Include="Converters\DateTimeToShortDateConverter.cs" />
     <Compile Include="Converters\EmptyStringToVisibiltyConverter.cs" />
     <Compile Include="Helpers\Extensions.cs" />
