@@ -9,7 +9,7 @@ namespace SimpleMVVM.Core.Services
 
         Task NavigateToPageAsync(Page page);
 
-        Task GoBackAsync();
+        Task GoBackAsync(bool isModal = false);
 
         INavigation Navigation { get; set; }
     }

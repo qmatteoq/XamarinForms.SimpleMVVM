@@ -6,9 +6,16 @@ namespace SimpleMVVM.Core.Services
 {
     public class NavigationService: INavigationService
     {
-        public async Task GoBackAsync()
+        public async Task GoBackAsync(bool isModal = false)
         {
-            await Navigation.PopAsync();
+            if (isModal)
+            {
+                await Navigation.PopModalAsync();
+            }
+            else
+            {
+                await Navigation.PopAsync();
+            }
         }
 
         public INavigation Navigation { get; set; }
