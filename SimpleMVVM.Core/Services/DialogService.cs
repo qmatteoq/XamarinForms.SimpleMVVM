@@ -104,9 +104,20 @@ namespace SimpleMVVM.Core.Services
         }
 
 
-        Task<bool> IDialogService.ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText, Action<bool> afterHideCallback)
+        async Task<bool> IDialogService.ShowMessage(string message, string title, string buttonConfirmText, string buttonCancelText, Action<bool> afterHideCallback)
         {
-            throw new NotImplementedException();
+            var result = await _dialogPage.DisplayAlert(
+                title,
+                message,
+                buttonConfirmText,
+                buttonCancelText);
+
+            if (afterHideCallback != null)
+            {
+                afterHideCallback(result);
+            }
+
+            return result;
         }
     }
 }
