@@ -1,10 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using PropertyChanged;
 using SimpleMVVM.Core.ViewModels;
 
 namespace SimpleMVVM.Sample.ViewModels
 {
-    [ImplementPropertyChanged]
     public class DetailViewModel : ViewModel
     {
         public override void OnInit(object args)
@@ -12,7 +10,17 @@ namespace SimpleMVVM.Sample.ViewModels
             MainText = args.ToString();
         }
 
-        public string MainText { get; set; }
+        private string _mainText;
+
+        public string MainText
+        {
+            get { return _mainText; }
+            set
+            {
+                _mainText = value;
+                RaisePropertyChanged();
+            }
+        }
 
         private RelayCommand _goBackCommand;
 
